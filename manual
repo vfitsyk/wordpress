@@ -1,3 +1,5 @@
+Manual for install wordpress
+-----------------
 Have installed Docker and Docker Compose
 mkdir ../wordpress/
 Put there docker-compose.yml
