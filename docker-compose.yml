@@ -25,3 +25,13 @@ services:
       MYSQL_DATABASE: wordpress
       MYSQL_USER: admin
       MYSQL_PASSWORD: password
+  nginx:
+    container_name: nginx-wordpress
+    depends_on:
+      - wordpress
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile-nginx
+    ports:
+      - "80:80"
