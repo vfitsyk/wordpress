@@ -25,6 +25,11 @@ services:
       MYSQL_DATABASE: wordpress
       MYSQL_USER: admin
       MYSQL_PASSWORD: password
+    logging:
+      driver: syslog
+      options:
+        syslog-address: "udp://logs7.papertrailapp.com:28447"
+        tag: "{{.Name}}/{{.ID}}"
   nginx:
     container_name: nginx-wordpress
     depends_on:
@@ -35,3 +40,8 @@ services:
       dockerfile: Dockerfile-nginx
     ports:
       - "80:80"
+    logging:
+      driver: syslog
+      options:
+        syslog-address: "udp://logs7.papertrailapp.com:28447"
+        tag: "{{.Name}}/{{.ID}}"
