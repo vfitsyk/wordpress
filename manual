@@ -2,6 +2,6 @@ Manual for install Wordpress
 ----------------------------
 Have installed Docker and Docker Compose
 mkdir ../wordpress/
-Put there docker-compose.yml
-Run 'docker-compose up -d'
-Open in browser: http://<ip>:8000
+Put there docker-compose.yml, Dockerfile-nginx, default.conf
+Run 'docker-compose up --build -d'
+Open in browser: http://<ip>
