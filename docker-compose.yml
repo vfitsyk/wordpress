@@ -33,6 +33,7 @@ services:
         tag: "{{.Name}}/{{.ID}}"
 
   nginx:
+    image: nginx:latest
     container_name: nginx-wordpress
     depends_on:
       - wordpress
@@ -49,6 +50,7 @@ services:
         tag: "{{.Name}}/{{.ID}}"
 
   datadog:
+    container_name: datadog
     build: datadog
     links:
       - mysql
