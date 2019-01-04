@@ -1,7 +1,7 @@
-Manual for install Wordpress
-----------------------------
+Instruction how to deploy Wordpress with MySQL on host
+------------------------------------------------------
 Have installed Docker and Docker Compose
 mkdir ../wordpress/
 Put there docker-compose.yml, Dockerfile-nginx, default.conf
 Run 'docker-compose up --build -d'
-Open in browser: http://<ip>
+Open in browser: http://<host_ip>
