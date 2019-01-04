@@ -1,7 +1,9 @@
 Instruction how to deploy Wordpress with MySQL on host
 ------------------------------------------------------
 Have installed Docker and Docker Compose
-mkdir wordpress
-Put there docker-compose.yml, Dockerfile-nginx, default.conf and datadog folder
-Run 'docker-compose up --build -d'
-Open in browser: http://<host_ip>
+1. Run Papertrail and Datadog containers:
+   docker run --restart=always -d --name papertrail -v=/var/run/docker.sock:/var/run/docker.sock gliderlabs/logspout syslog+tls://logs7.papertrailapp.com:28447
+   docker run --restart=unless-stopped -d --name dd-agent -v /var/run/docker.sock:/var/run/docker.sock:ro -v /proc/:/host/proc/:ro -v /sys/fs/cgroup/:/host/sys/fs/cgroup:ro -e API_KEY=2d00ff1e1a485be01433d8705da0321e datadog/docker-dd-agent:latest
+2. Make folder 'wordpress' and put there docker-compose.yml, Dockerfile-nginx, default.conf and datadog folder
+3. Run 'docker-compose up --build -d'
+4. Open in browser: http://<host_ip>
