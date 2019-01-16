@@ -56,7 +56,7 @@ services:
       - mysql
       - nginx
     environment:
-      - DD_API_KEY=2d00ff1e1a485be01433d8705da0321e
+      - DD_API_KEY=<DD_API_KEY>
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - /proc/:/host/proc/:ro
